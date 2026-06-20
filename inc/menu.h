@@ -16,4 +16,4 @@ typedef enum {
 #define MAX_ARGV_TOKENS 64
 void run_menu_loop(void);
 
-#endif /* MENU_H */
+#endif

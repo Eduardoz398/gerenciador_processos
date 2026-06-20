@@ -137,7 +137,8 @@ ProcResult list_system_users(void)
     printf("%-20s %-8s %s\n", "USUÁRIO", "UID", "SHELL");
     printf("--------------------------------------------------\n");
 
-    setpwent(); 
+
+   setpwent(); 
 
     struct passwd *pw;
     while ((pw = getpwent()) != NULL) {

@@ -1,13 +1,6 @@
 #ifndef FETCH_PROC_H
 #define FETCH_PROC_H
 
-/**
- * fetch_proc.h - API de consulta de processos via /proc.
- *
- * Todas as funções que lêem do sistema de arquivos /proc residem aqui.
- * O design favorece a reutilização: fill_process_info() é o único ponto
- * de leitura de dados de um PID; as demais funções constroem sobre ele.
- */
 
 #include <stdio.h>
 #include <stdlib.h>

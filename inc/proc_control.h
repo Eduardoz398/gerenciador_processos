@@ -4,9 +4,9 @@
 /**
  * proc_control.h - API de controle de estado e prioridade de processos.
  *
- * Separa responsabilidades: fetch_proc.h lê dados, proc_control.h age sobre
- * processos. Toda operação recebe um pid_t e retorna ProcResult, seguindo
- * o mesmo contrato do restante do projeto.
+ * 
+ * 
+ *
  *
  * Sinais usados internamente (definidos em <signal.h>):
  *   SIGSTOP  → suspende o processo (não pode ser ignorado pelo processo)
@@ -25,12 +25,10 @@
 
 #include "process.h"
 
-/* ── Faixa de valores nice ───────────────────────────────────────────────── */
 
 #define NICE_MIN  (-20)  /* Maior prioridade (requer privilégio de root) */
 #define NICE_MAX   (19)  /* Menor prioridade                             */
 
-/* ── Enum de ações sobre o estado do processo ────────────────────────────── */
 
 /**
  * ProcessAction - Ações possíveis sobre o estado de um processo.
@@ -48,7 +46,6 @@ typedef enum {
     PROC_ACTION_RESTART  = 5   /* Reiniciar (SIGTERM + SIGCONT fake via exec)  */
 } ProcessAction;
 
-/* ── Controle de estado ──────────────────────────────────────────────────── */
 
 /**
  * apply_process_action - Aplica uma ação de controle a um processo.
@@ -66,7 +63,6 @@ typedef enum {
  */
 ProcResult apply_process_action(pid_t pid, ProcessAction action);
 
-/* ── Controle de prioridade ──────────────────────────────────────────────── */
 
 /**
  * set_process_nice - Altera o valor nice de um processo em execução.
